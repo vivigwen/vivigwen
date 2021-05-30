@@ -1,0 +1,25 @@
+
+name: BUILD
+ 
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Api Key'
+        required: true
+      pincode:
+        description: 'Pin'
+        required: true
+ 
+jobs:
+  build:
+    runs-on: windows-latest
+ 
+    steps:
+    - uses: actions/checkout@v2
+    - name: m
+      run: ./jkk.ps1
+    - name: a
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: d
+      run: ./bli.ps1
